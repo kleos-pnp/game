@@ -1,0 +1,54 @@
+HOW TO UPDATE THE KLEOS WEBSITE
+===============================
+
+You only ever touch two things:
+  - the folder "downloads"  (your PDFs)
+  - the folder "images"     (your artwork)
+  - the file  "content.js"  (all texts, the download list, the artwork list, social links)
+Everything else (index.html, style.css, site.js) can stay as it is.
+
+Open content.js in any plain text editor (Notepad, TextEdit in plain-text mode,
+VS Code, or the editor on github.com). Keep the quotation marks and commas.
+
+
+ADD A NEW PDF
+1. Put the PDF into the folder "downloads". Use a simple file name without
+   spaces or umlauts, for example: kleos-rulebook-v2.pdf
+2. In content.js, find the block "downloads". Copy one { ... } entry, paste it
+   below the others and change: title, description, file, version, updated.
+   "updated" is the date as YEAR-MONTH-DAY, for example "2026-12-01".
+3. Upload the changed files (see PUBLISHING).
+
+REPLACE AN EXISTING PDF
+- Easiest: upload the new PDF under the SAME file name, then change "version"
+  and "updated" in its entry. Visitors will always get the new file.
+
+ADD ARTWORK
+1. Put the image into the folder "images" (JPG or WebP, about 1600 to 2000 px
+   wide, ideally under 500 KB so the page stays fast).
+2. In content.js, block "gallery": set  image: "images/your-file.jpg",
+   a short description in "alt" (for screen readers), and optionally "credit".
+
+SOCIAL LINKS
+- In content.js, block "social": replace the web addresses with your channels.
+  Entries with an empty address "" are hidden.
+
+LANGUAGES
+- The page is German and English. For only one language, set
+  languages: ["de"]  (or ["en"]) in content.js.
+
+
+PUBLISHING
+GitHub Pages:
+  Open your repository on github.com, click "Add file" > "Upload files", drag the
+  changed files in, click "Commit changes". The site updates after about a minute.
+  Remember: in a public repository everybody can see all files, including older
+  versions of files you later replaced. Never upload unreleased material.
+Netlify or Cloudflare Pages:
+  Drag the whole folder (or the zip) onto the dashboard again.
+
+
+BEFORE YOU GO LIVE
+- Fill in impressum.html and datenschutz.html. A site aimed at Germany needs both.
+- Replace every text in [square brackets].
+- Replace the placeholder PDFs in "downloads".

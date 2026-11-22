@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Kleos – Pen-&amp;-Paper-Rollenspiel</title>
+  <meta name="description" content="Kleos ist ein Pen-&amp;-Paper-Rollenspiel. Prämisse, Artwork, Regeln als PDF und Links zur Community.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a>
+
+  <header class="wrap bar">
+    <a class="brand" href="#top">Kleos</a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="#premise" data-i18n="nav_premise">Prämisse</a>
+      <a href="#artwork" data-i18n="nav_art">Artwork</a>
+      <a href="#downloads" data-i18n="nav_dl">Downloads</a>
+      <a href="#community" data-i18n="nav_community">Community</a>
+    </nav>
+    <div class="lang" id="lang" role="group" aria-label="Language" hidden></div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <p class="eyebrow"><span class="greek" lang="grc">ΚΛΕΟΣ</span><span id="hero-kind"></span></p>
+      <h1 class="wordmark">Kleos</h1>
+      <div class="hero-foot">
+        <p class="gloss" id="hero-gloss"></p>
+        <p class="actions">
+          <a class="btn primary" href="#downloads" data-i18n="cta_rules">Regeln herunterladen</a>
+          <a class="btn" href="#premise" data-i18n="cta_premise">Worum geht es?</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="premise">
+      <div class="wrap"><div class="section-grid">
+        <h2 id="premise-h"></h2>
+        <div class="section-body">
+          <div class="prose" id="premise-text"></div>
+          <dl class="facts" id="facts"></dl>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="section" id="artwork">
+      <div class="wrap"><div class="section-grid">
+        <h2 data-i18n="h_art">Artwork</h2>
+        <div class="section-body"><div class="gallery" id="gallery"></div></div>
+      </div></div>
+    </section>
+
+    <section class="section" id="downloads">
+      <div class="wrap"><div class="section-grid">
+        <h2 data-i18n="h_dl">Downloads</h2>
+        <div class="section-body">
+          <p class="lead" data-i18n="dl_lead"></p>
+          <div id="dl-list"></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="section" id="community">
+      <div class="wrap"><div class="section-grid">
+        <h2 data-i18n="h_community">Community</h2>
+        <div class="section-body">
+          <p class="lead" data-i18n="community_lead"></p>
+          <ul class="social" id="social"></ul>
+        </div>
+      </div></div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <span id="foot-name">© Kleos</span>
+    <nav aria-label="Legal">
+      <a href="impressum.html" data-i18n="imprint">Impressum</a>
+      <a href="datenschutz.html" data-i18n="privacy">Datenschutz</a>
+    </nav>
+  </footer>
+
+  <dialog id="lightbox" aria-label="Artwork">
+    <button class="close" type="button">×</button>
+    <img alt="">
+    <p></p>
+  </dialog>
+
+  <noscript><p class="wrap">Diese Seite braucht JavaScript, um Inhalte anzuzeigen. / This page needs JavaScript to show its content.</p></noscript>
+
+  <script src="content.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
