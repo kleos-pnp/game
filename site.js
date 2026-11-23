@@ -47,6 +47,7 @@
     if (v == null) { return ""; }
     if (typeof v === "string" || Array.isArray(v)) { return v; }
     if (v[lang] != null) { return v[lang]; }
+    if (v.de != null) { return v.de; }
     if (v.en != null) { return v.en; }
     return v[langs[0]] != null ? v[langs[0]] : "";
   }
@@ -80,7 +81,7 @@
 
   /* On a real web host, add ?v=... so visitors never get an old cached PDF. */
   function fileHref(d) {
-    var h = d.file;
+    var h = t(d.file);
     if (/^https?:$/.test(location.protocol) && h.indexOf("?") < 0 && (d.updated || d.version)) {
       h += "?v=" + encodeURIComponent((d.updated || "") + (d.version ? "-" + d.version : ""));
     }
