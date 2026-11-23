@@ -16,6 +16,7 @@
       btn_dl: "PDF herunterladen", soon: "Folgt",
       updated: "Stand", version: "Version", art_by: "Illustration:",
       enlarge: "Vergrößern", close: "Schließen", new_tab: "öffnet in neuem Tab",
+      notes: "Anmerkungen", note_ref: "Anmerkung 1", back: "Zurück zum Text",
       imprint: "Impressum", privacy: "Datenschutz", noscript: "Diese Seite braucht JavaScript, um Inhalte anzuzeigen."
     },
     en: {
@@ -28,6 +29,7 @@
       btn_dl: "Download PDF", soon: "Coming soon",
       updated: "Updated", version: "Version", art_by: "Art:",
       enlarge: "Enlarge", close: "Close", new_tab: "opens in a new tab",
+      notes: "Notes", note_ref: "Note 1", back: "Back to text",
       imprint: "Legal notice", privacy: "Privacy policy", noscript: "This page needs JavaScript to show its content."
     }
   };
@@ -113,6 +115,29 @@
 
     $("hero-kind").textContent = t(C.hero.kind);
     $("hero-gloss").textContent = t(C.hero.gloss);
+
+    /* footnote on the subtitle */
+    var note = C.hero.note || {};
+    var noteText = t(note.text);
+    var hasNote = !!noteText;
+    $("fn-ref").hidden = !hasNote;
+    $("notes").hidden = !hasNote;
+    if (hasNote) {
+      $("fn-ref-link").setAttribute("aria-label", ui("note_ref"));
+      $("fn1-back").setAttribute("aria-label", ui("back"));
+      var fn = $("fn1-text");
+      fn.textContent = "";
+      if (note.url) {
+        var na = el("a", null, noteText);
+        na.href = note.url;
+        na.target = "_blank";
+        na.rel = "noopener noreferrer";
+        fn.appendChild(na);
+      } else {
+        fn.textContent = noteText;
+        markPlaceholder(fn, noteText);
+      }
+    }
 
     /* language switch */
     var sw = $("lang");

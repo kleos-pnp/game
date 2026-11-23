@@ -27,10 +27,16 @@ window.KLEOS = {
       de: "Pen-&-Paper-Rollenspiel",
       en: "Pen & paper role-playing game"
     },
-    /* The meaning of the word "kleos". Change or remove as you like. */
     gloss: {
-      de: "κλέος, griechisch: das, was man von dir erzählt. Der Ruhm, der den überlebt, der ihn verdient hat.",
-      en: "κλέος, Greek: what is told of you. The glory that outlives the one who earned it."
+      de: "κλέος, griechisch: was über dich erzählt wird.",
+      en: "κλέος, Greek: what is told of you."
+    },
+    note: {
+      text: {
+        de: "Vgl. Seite 26, Nagy, G. (2020). The Ancient Greek Hero in 24 Hours. USA: Harvard University Press.",
+        en: "See page 26, Nagy, G. (2020). The Ancient Greek Hero in 24 Hours. USA: Harvard University Press."
+      },
+      url: "https://www.google.de/books/edition/The_Ancient_Greek_Hero_in_24_Hours/Y8K_DwAAQBAJ?hl=de&gbpv=0"
     }
   },
 

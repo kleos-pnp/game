@@ -348,6 +348,20 @@ dialog#lightbox .close {
 }
 .soc:hover { border-color: var(--accent); color: var(--accent); }
 
+/* Footnote */
+.gloss sup { font-size: .5em; line-height: 0; margin-left: .15em; vertical-align: super; }
+.gloss sup a { text-decoration: none; padding: .1em .2em; }
+.gloss sup a:hover { text-decoration: underline; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.notes { padding-block: 2.5rem 1.5rem; color: var(--muted); font-size: .9rem; }
+.notes ol { margin: 0; padding-left: 1.4rem; max-width: 46rem; }
+.notes li { padding-left: .25rem; scroll-margin-top: 2rem; }
+.notes li::marker { color: var(--accent); font-weight: 600; }
+.notes .back { text-decoration: none; margin-left: .25rem; }
+.notes a { color: var(--accent); }
+.notes li:target { color: var(--fg); }
+.gloss sup { scroll-margin-top: 4rem; }
+
 /* Footer */
 .foot {
   display: flex;
