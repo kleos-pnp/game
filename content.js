@@ -63,6 +63,45 @@ window.KLEOS = {
     ]
   },
 
+  /* ---------- Daran arbeiten wir gerade ----------
+     One { ... } block per project. Copy a block to add one, delete a block to remove it.
+       title:        name of the project
+       description:  one or two sentences (optional)
+       bullets:      short list of points (optional, delete the line if you don't want it)
+       status:       ANY text, emojis welcome, e.g. "🛠️ Wir hämmern drauf rum"
+       tone:         colour of the status label. Choose one of:
+                     "hot"  (orange: in full swing)
+                     "go"   (green: nearly done / released)
+                     "idea" (blue: still an idea or in testing)
+                     "rest" (grey: paused)
+                     Leave it out for a neutral label.
+     Set  work: []  (empty) to hide the whole section. */
+  work: {
+    heading: { de: "Daran arbeiten wir gerade", en: "What we are working on" },
+    lead: {
+      de: "Ein Blick in die Werkstatt: Das ist gerade in Arbeit.",
+      en: "A look into the workshop: this is what is in progress."
+    },
+    items: [
+      { title: { de: "Neue Regelversion", en: "New rules version" },
+        description: {
+          de: "[Platzhalter] Kurze Beschreibung: Was ändert sich und warum?",
+          en: "[Placeholder] Short description: what changes and why?" },
+        bullets: {
+          de: ["[Platzhalter] Erster Punkt", "[Platzhalter] Zweiter Punkt"],
+          en: ["[Placeholder] First point", "[Placeholder] Second point"] },
+        status: { de: "🛠️ In Arbeit", en: "🛠️ In progress" },
+        tone: "hot" },
+
+      { title: { de: "Einstiegsabenteuer", en: "Starter adventure" },
+        description: {
+          de: "[Platzhalter] Ein erstes Abenteuer für neue Spielgruppen.",
+          en: "[Placeholder] A first adventure for new groups." },
+        status: { de: "🎲 Im Playtest", en: "🎲 Playtesting" },
+        tone: "idea" }
+    ]
+  },
+
   /* ---------- Artwork ----------
      1. Put the image file into the folder "images".
      2. Write its path into  image:  (for example "images/cover.jpg").

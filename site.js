@@ -8,7 +8,7 @@
   var UI = {
     de: {
       skip: "Zum Inhalt springen",
-      nav_premise: "Prämisse", nav_art: "Artwork", nav_dl: "Downloads", nav_community: "Community",
+      nav_work: "In Arbeit", nav_premise: "Prämisse", nav_art: "Artwork", nav_dl: "Downloads", nav_community: "Community",
       cta_rules: "Regeln herunterladen", cta_premise: "Worum geht es?",
       h_art: "Artwork", h_dl: "Downloads", h_community: "Community",
       dl_lead: "Regeln und Zusatzinhalte zum Herunterladen.",
@@ -20,7 +20,7 @@
     },
     en: {
       skip: "Skip to content",
-      nav_premise: "Premise", nav_art: "Artwork", nav_dl: "Downloads", nav_community: "Community",
+      nav_work: "In progress", nav_premise: "Premise", nav_art: "Artwork", nav_dl: "Downloads", nav_community: "Community",
       cta_rules: "Download the rules", cta_premise: "What is it about?",
       h_art: "Artwork", h_dl: "Downloads", h_community: "Community",
       dl_lead: "Rules and extra content to download.",
@@ -151,6 +151,46 @@
       wrap.appendChild(dd);
       facts.appendChild(wrap);
     });
+
+    /* work in progress */
+    var W = C.work || {};
+    var wItems = W.items || [];
+    var wList = $("work-list");
+    wList.textContent = "";
+    $("work").hidden = !wItems.length;
+    $("nav-work").hidden = !wItems.length;
+    if (wItems.length) {
+      $("work-h").textContent = t(W.heading);
+      $("work-lead").textContent = t(W.lead);
+      $("work-lead").hidden = !W.lead;
+      wItems.forEach(function (w) {
+        var li = el("li", "wk");
+        var main = el("div", "wk-main");
+        main.appendChild(el("h3", null, t(w.title)));
+        if (w.description) {
+          var wd = t(w.description);
+          var wp = el("p", null, wd);
+          markPlaceholder(wp, wd);
+          main.appendChild(wp);
+        }
+        var bl = w.bullets ? [].concat(t(w.bullets)) : [];
+        if (bl.length) {
+          var ul = el("ul");
+          bl.forEach(function (b) {
+            var bi = el("li", null, b);
+            markPlaceholder(bi, b);
+            ul.appendChild(bi);
+          });
+          main.appendChild(ul);
+        }
+        li.appendChild(main);
+        if (w.status) {
+          var tone = /^(hot|go|idea|rest)$/.test(w.tone || "") ? w.tone : "plain";
+          li.appendChild(el("span", "status " + tone, t(w.status)));
+        }
+        wList.appendChild(li);
+      });
+    }
 
     /* gallery */
     var g = $("gallery");
