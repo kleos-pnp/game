@@ -102,7 +102,13 @@ a:focus-visible, button:focus-visible {
 .lang button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
 
 /* ---------- Hero ---------- */
-.hero { padding-block: clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 6vw, 5rem); }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  padding-block: clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 6vw, 5rem);
+}
+.hero-main { min-width: 0; }
 .eyebrow {
   display: flex;
   flex-wrap: wrap;
@@ -136,6 +142,27 @@ a:focus-visible, button:focus-visible {
 }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0; }
 @media (max-width: 44rem) { .hero-foot { grid-template-columns: minmax(0, 1fr); } }
+
+.hero-art { margin: 0; justify-self: center; width: min(100%, 26rem); }
+.hero-art button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.hero-art img { width: 100%; height: auto; aspect-ratio: 800 / 1074; }
+
+@media (min-width: 56rem) {
+  .hero.hero-side {
+    grid-template-columns: minmax(0, 1fr) clamp(15rem, 34%, 26rem);
+    gap: 2rem 3rem;
+    align-items: center;
+  }
+  .hero-side .wordmark { font-size: clamp(5.5rem, 18vw, 18rem); }
+  .hero-side .hero-foot { grid-template-columns: minmax(0, 1fr); align-items: start; }
+}
 
 .btn {
   display: inline-flex;
@@ -177,6 +204,8 @@ a:focus-visible, button:focus-visible {
 /* Premise */
 .prose p { margin: 0 0 1rem; max-width: 40rem; }
 .prose .lede { font: 400 clamp(1.3rem, 2.4vw, 1.7rem)/1.4 var(--display); }
+.prose .lede.has-subtitle { margin-bottom: .25rem; }
+.prose .premise-subtitle { color: var(--muted); margin-bottom: 1.5rem; }
 .ph-text { color: var(--muted); font-style: italic; }
 .facts {
   display: grid;
