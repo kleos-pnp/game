@@ -11,7 +11,7 @@
       nav_work: "In Arbeit", nav_premise: "Prämisse", nav_art: "Artwork", nav_dl: "Downloads", nav_community: "Community",
       cta_rules: "Regeln herunterladen", cta_premise: "Worum geht es?",
       h_art: "Artwork", h_dl: "Downloads", h_community: "Community",
-      dl_lead: "Regeln und Zusatzinhalte zum Herunterladen.",
+      dl_lead: "Alle Downloads sind kostenlos. Wenn dir unser Spiel gefällt, teile es mit deinen Freunden!.",
       community_lead: "Hier findet ihr uns.",
       btn_dl: "PDF herunterladen", soon: "Folgt",
       updated: "Stand", version: "Version", art_by: "Illustration:",
@@ -24,7 +24,7 @@
       nav_work: "In progress", nav_premise: "Premise", nav_art: "Artwork", nav_dl: "Downloads", nav_community: "Community",
       cta_rules: "Download the rules", cta_premise: "What is it about?",
       h_art: "Artwork", h_dl: "Downloads", h_community: "Community",
-      dl_lead: "Rules and extra content to download.",
+      dl_lead: "All downloads are free. If you like our game, share it with your friends!",
       community_lead: "Find us here.",
       btn_dl: "Download PDF", soon: "Coming soon",
       updated: "Updated", version: "Version", art_by: "Art:",
@@ -59,10 +59,32 @@
 
   function $(id) { return document.getElementById(id); }
 
-  function el(tag, cls, text) {
+  function appendText(node, text) {
+    String(text).split(/\r?\n/).forEach(function (line, i) {
+      if (i > 0) { node.appendChild(document.createElement("br")); }
+      node.appendChild(document.createTextNode(line));
+    });
+  }
+
+  function el(tag, cls, text, emphasis) {
     var e = document.createElement(tag);
     if (cls) { e.className = cls; }
-    if (text != null) { e.textContent = text; }
+    if (text != null) {
+      if (emphasis) {
+        var parts = String(text).split(/(<em>[\s\S]*?<\/em>)/);
+        parts.forEach(function (part) {
+          if (part.slice(0, 4) === "<em>" && part.slice(-5) === "</em>") {
+            var italic = document.createElement("em");
+            appendText(italic, part.slice(4, -5));
+            e.appendChild(italic);
+          } else {
+            appendText(e, part);
+          }
+        });
+      } else {
+        appendText(e, text);
+      }
+    }
     return e;
   }
 
@@ -116,6 +138,20 @@
 
     $("hero-kind").textContent = t(C.hero.kind);
     $("hero-gloss").textContent = t(C.hero.gloss);
+    $("foot-art-credit").textContent = t(C.site && C.site.artCredit);
+
+    /* hero artwork */
+    var art = C.hero.art || {};
+    $("hero-art").hidden = !art.image;
+    $("top").classList.toggle("hero-side", !!art.image && art.layout === "side");
+    if (art.image) {
+      var artImg = $("hero-art-img");
+      var artLarge = { image: art.large || art.image, alt: art.alt };
+      if (artImg.getAttribute("src") !== art.image) { artImg.src = art.image; }
+      artImg.alt = t(art.alt);
+      $("hero-art-btn").setAttribute("aria-label", ui("enlarge") + ": " + (t(art.alt) || "Kleos"));
+      $("hero-art-btn").onclick = function () { openBox(artLarge, ""); };
+    }
 
     /* footnote on the subtitle */
     var note = C.hero.note || {};
@@ -158,11 +194,17 @@
     /* premise */
     $("premise-h").textContent = t(C.premise.heading);
     var pt = $("premise-text");
+    var subtitle = t(C.premise.subtitle);
     pt.textContent = "";
     [].concat(t(C.premise.text)).forEach(function (p, i) {
-      var e = el("p", i === 0 ? "lede" : null, p);
+      var e = el("p", i === 0 ? (subtitle ? "lede has-subtitle" : "lede") : null, p);
       markPlaceholder(e, p);
       pt.appendChild(e);
+      if (i === 0 && subtitle) {
+        var sub = el("p", "premise-subtitle", subtitle);
+        markPlaceholder(sub, subtitle);
+        pt.appendChild(sub);
+      }
     });
     var facts = $("facts");
     facts.textContent = "";
@@ -171,7 +213,7 @@
     fl.forEach(function (f) {
       var wrap = el("div");
       var v = t(f.value);
-      var dd = el("dd", null, v);
+      var dd = el("dd", null, v, true);
       markPlaceholder(dd, v);
       wrap.appendChild(el("dt", null, t(f.label)));
       wrap.appendChild(dd);
@@ -220,8 +262,12 @@
 
     /* gallery */
     var g = $("gallery");
+    var gallery = C.gallery || [];
+    var hasArtwork = gallery.some(function (it) { return !!it.image; });
+    $("artwork").hidden = !hasArtwork;
+    $("nav-artwork").hidden = !hasArtwork;
     g.textContent = "";
-    (C.gallery || []).forEach(function (it) {
+    gallery.forEach(function (it) {
       var cap = t(it.caption);
       var credit = it.credit ? ui("art_by") + " " + it.credit : "";
       var label = [cap, credit].filter(Boolean).join(" · ");
@@ -262,7 +308,7 @@
         info.appendChild(el("h4", null, t(d.title)));
         if (d.description) {
           var desc = t(d.description);
-          var p = el("p", null, desc);
+          var p = el("p", null, desc, true);
           markPlaceholder(p, desc);
           info.appendChild(p);
         }
