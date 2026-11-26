@@ -344,7 +344,8 @@
         if (d.file) {
           a = el("a", "btn primary");
           a.href = fileHref(d);
-          a.setAttribute("download", "");
+          a.target = "_blank";
+          a.rel = "noopener";
           a.innerHTML = ARROW_DOWN;
           a.appendChild(el("span", null, ui("btn_dl")));
           a.setAttribute("aria-label", ui("btn_dl") + ": " + t(d.title));

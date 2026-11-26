@@ -190,19 +190,19 @@ text: {
     { category: "rules",
       title: { de: "Regelwerk (2024)", en: "Rulebook (2024)" },
       description: { de: "Unser erstes öffentliches Regelwerk - vollständig spielbar. Inzwischen hat sich bei uns zwar einiges getan, aber diese Version spielt sich immer noch super.", en: "Our first public rulebook - fully playable. A lot has changed since then, but this version is still great fun to play." },
-      file: "downloads/kleos-regelwerk-2024.pdf",
+      file: { de: "downloads/Kleos_Regelwerk_2024.pdf", en: "downloads/Kleos_Rulebook_2024.pdf" },
       version: "1.0", updated: "2026-11-26", size: "" },
 
     { category: "rules",
       title: { de: "Charakterbogen (2024)", en: "Character sheet (2024)" },
-      description: { de: "Der Charakterbogen für das dazugehörige Regelwerk zum Ausdrucken. Du kannst ihn gern nach Bedarf ergänzen oder abwandeln.", en: "The printable character sheet for the accompanying rulebook. Feel free to expand on it or to adapt it as needed." },
-      file: "downloads/kleos-charakterbogen-2024.pdf",
+      description: { de: "Der Charakterbogen für das dazugehörige Regelwerk zum Ausdrucken. Du kannst ihn gern nach Bedarf ergänzen oder abwandeln.", en: "The printable character sheet for the accompanying rulebook. Feel free to expand on it or to adapt it as needed.\n\nNOTE: If you need the sheet translated, please contact us via Discord." },
+      file: "downloads/Kleos_Charakterbogen_2024.pdf",
       version: "1.0", updated: "2026-11-26", size: "" },
 
     { category: "content",
-      title: { de: "Abenteuer - Die Zauberlehrlinge (2024)", en: "Aventure - The Apprentices (2024)" },
-      description: { de: "<em>Es ist euer erster Tag als Lehrlinge der Magie. Meister Merlin muss \"Nur mal kurz etwas besorgen\" und lässt euch in seinem Haus voller magischer Artefakte und surrealer Absonderlichkeiten allein. Wer da jetzt Böses denkt...</em>\n\nEuch erwartet ein verspieltes Abenteuer mit Fokus auf Erzählung, Improvisation und viel Kreativität.", en: "<em>It's your first day as apprentices of magic. Master Merlin has to \"Go get something real quick\" and leaves you alone in his house full of magical artifacts and surreal oddities. Surely, you won't be tempted by mischief...</em>\n\nA playful adventure, focused on storytelling, improvisation and plenty of creativity." },
-      file: "downloads/zauberlehrlinge-2024.pdf",
+      title: { de: "Abenteuer - Die Zauberlehrlinge (2024)", en: "Adventure - The Apprentices (2024)" },
+      description: { de: "<em>Es ist euer erster Tag als Lehrlinge der Magie. Meister Merlin muss \"Nur mal kurz etwas besorgen\" und lässt euch in seinem Haus voller magischer Artefakte und surrealer Absonderlichkeiten allein. Wer da jetzt Böses denkt...</em>\n\nEuch erwartet ein verspieltes Abenteuer mit Fokus auf Erzählung, Improvisation und viel Kreativität. Diese Datei ist eine frühe Testversion.", en: "<em>It's your first day as apprentices of magic. Master Merlin has to \"Go get something real quick\" and leaves you alone in his house full of magical artifacts and surreal oddities. Surely, you won't be tempted by mischief...</em>\n\nA playful adventure, focused on storytelling, improvisation and plenty of creativity. This file is an early playtest version.\n\nNOTE: If you need this adventure translated, please contact us via Discord." },
+      file: "downloads/Die_Zauberlehrlinge_2024.pdf",
       version: "1.0", updated: "2026-11-26", size: "" }
   ],
 
