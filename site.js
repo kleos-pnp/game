@@ -15,6 +15,7 @@
       community_lead: "Hier findet ihr uns.",
       btn_dl: "PDF herunterladen", soon: "Folgt",
       updated: "Stand", version: "Version", art_by: "Illustration:",
+      work_updated: "Zuletzt aktualisiert:",
       enlarge: "Vergrößern", close: "Schließen", new_tab: "öffnet in neuem Tab",
       notes: "Anmerkungen", note_ref: "Anmerkung 1", back: "Zurück zum Text",
       imprint: "Impressum", privacy: "Datenschutz", noscript: "Diese Seite braucht JavaScript, um Inhalte anzuzeigen."
@@ -28,6 +29,7 @@
       community_lead: "Find us here.",
       btn_dl: "Download PDF", soon: "Coming soon",
       updated: "Updated", version: "Version", art_by: "Art:",
+      work_updated: "Last updated:",
       enlarge: "Enlarge", close: "Close", new_tab: "opens in a new tab",
       notes: "Notes", note_ref: "Note 1", back: "Back to text",
       imprint: "Legal notice", privacy: "Privacy policy", noscript: "This page needs JavaScript to show its content."
@@ -231,6 +233,12 @@
       $("work-h").textContent = t(W.heading);
       $("work-lead").textContent = t(W.lead);
       $("work-lead").hidden = !W.lead;
+      $("work-updated").hidden = !W.updated;
+      if (W.updated) {
+        $("work-updated-label").textContent = ui("work_updated");
+        $("work-updated-date").dateTime = W.updated;
+        $("work-updated-date").textContent = fmtDate(W.updated);
+      }
       wItems.forEach(function (w) {
         var li = el("li", "wk");
         var main = el("div", "wk-main");

@@ -108,9 +108,11 @@ text: {
                      "idea" (blue: still an idea or in testing)
                      "rest" (grey: paused)
                      Leave it out for a neutral label.
-     Set  work: []  (empty) to hide the whole section. */
+     Set items: [] (empty) to hide the whole section. */
   work: {
     heading: { de: "Daran arbeiten wir gerade", en: "What we are working on" },
+    /* Update this date whenever you change the projects below. Use YYYY-MM-DD. */
+    updated: "2026-11-26",
     items: [
       { title: { de: "Neue Regelversion", en: "New rules version" },
         description: {
