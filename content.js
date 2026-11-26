@@ -49,7 +49,7 @@ window.KLEOS = {
        layout: "stacked" below the text, or "side" beside it on desktop
        image:  shown on the page (about 800 pixels wide)
        large:  opened when visitors click the artwork (about 1600 pixels wide) */
-    art: {
+    /*art: {
       layout: "side",
       image: "images/kleos-hero-800.webp",
       large: "images/kleos-hero-1600.webp",
@@ -57,7 +57,7 @@ window.KLEOS = {
         de: "Farbenfrohe Illustration: Fantastische Figuren sitzen unter einem Banner mit der Aufschrift „Kleos“ auf einem Holzfloß, umgeben von Sprech- und Gedankenblasen. Unter einem Band mit den Worten „Geteilte Fantasie“ entfaltet sich eine bunte, traumhafte Welt.",
         en: "Colourful illustration: fantastical characters sit on a wooden raft beneath a banner reading “Kleos”, surrounded by speech and thought bubbles. Below a ribbon reading “Geteilte Fantasie” (shared imagination), a vivid, dreamlike world unfolds."
       }
-    }
+    }*/
   },
 
   /* ---------- Premise ---------- */
@@ -210,7 +210,7 @@ text: {
      Replace the web addresses with your own channels. An entry with an
      empty url "" is not shown. The addresses below are placeholders. */
   social: [
-    { name: "Discord",   url: "https://discord.com" },
-    { name: "Instagram", url: "https://www.instagram.com" }
+    { name: "Discord",   url: "https://discord.gg/zgBtKdVp54" },
+    { name: "Instagram", url: "https://www.instagram.com/mal_was_andrees?hvrq=MWkzc28zbXBkdHEwaw==" }
   ]
 };
