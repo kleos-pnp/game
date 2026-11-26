@@ -131,7 +131,17 @@ text: {
           en:["Final touches", "Illustration", "Print layout"]
         },
         status: { de: "📝 Grafik & Layout", en: "📝 Art & layout" },
-        tone: "go" }
+        tone: "go" },
+      { title: { de: "Weitere Abenteuer", en: "Further adventures" },
+        description: {
+          de: "Wir haben bereits weitere Abenteuer in Arbeit. Einige sind praktisch fertig, während andere gerade ihre ersten Playtests durchlaufen haben.",
+          en: "We are always working on new adventures. Some of them are basically done, while others have just gone through their first playtests." },
+        bullets: {
+            de:["Die Kupfersammler - Spieler gegen Spieler, in einer exotischen Wüstenstadt (vollständig Spielbar)", "Killing Vlad - Ein kurzweiliges Hack'n'slay im 30-jährigen Krieg (wird getestet)", "Metanoion - Eine epische Kampagne im alten Griechenland (in Entwicklung)"],
+            en:["The Copperclans - Player versus player in an exotic desert town (fully playable)", "Killing Vlad - A fast-paced hack'n'slay set in the 30-years war (playtesting)", "Metanoion - An epic campaign set in ancient greece (in development)"]
+        },
+        status: { de: "🛠️ In Arbeit", en: "🛠️ In progress" },
+        tone: "idea" }
     ]
   },
 
@@ -179,19 +189,19 @@ text: {
       title: { de: "Regelwerk (2024)", en: "Rulebook (2024)" },
       description: { de: "Unser erstes öffentliches Regelwerk - vollständig spielbar. Inzwischen hat sich bei uns zwar einiges getan, aber diese Version spielt sich immer noch super.", en: "Our first public rulebook - fully playable. A lot has changed since then, but this version is still great fun to play." },
       file: "downloads/kleos-regelwerk-2024.pdf",
-      version: "1.0", updated: "2024-06-13", size: "" },
+      version: "1.0", updated: "2026-11-26", size: "" },
 
     { category: "rules",
       title: { de: "Charakterbogen (2024)", en: "Character sheet (2024)" },
       description: { de: "Der Charakterbogen für das dazugehörige Regelwerk zum Ausdrucken. Du kannst ihn gern nach Bedarf ergänzen oder abwandeln.", en: "The printable character sheet for the accompanying rulebook. Feel free to expand on it or to adapt it as needed." },
       file: "downloads/kleos-charakterbogen-2024.pdf",
-      version: "1.0", updated: "2024-06-13", size: "" },
+      version: "1.0", updated: "2026-11-26", size: "" },
 
     { category: "content",
-      title: { de: "Die Zauberlehrlinge (Abenteuer)", en: "The Apprentices (Adventure)" },
+      title: { de: "Abenteuer - Die Zauberlehrlinge (2024)", en: "Aventure - The Apprentices (2024)" },
       description: { de: "<em>Es ist euer erster Tag als Lehrlinge der Magie. Meister Merlin muss \"Nur mal kurz etwas besorgen\" und lässt euch in seinem Haus voller magischer Artefakte und surrealer Absonderlichkeiten allein. Wer da jetzt Böses denkt...</em>\n\nEuch erwartet ein verspieltes Abenteuer mit Fokus auf Erzählung, Improvisation und viel Kreativität.", en: "<em>It's your first day as apprentices of magic. Master Merlin has to \"Go get something real quick\" and leaves you alone in his house full of magical artifacts and surreal oddities. Surely, you won't be tempted by mischief...</em>\n\nA playful adventure, focused on storytelling, improvisation and plenty of creativity." },
       file: "downloads/zauberlehrlinge-2024.pdf",
-      version: "1.0", updated: "2024-06-13", size: "" }
+      version: "1.0", updated: "2026-11-26", size: "" }
   ],
 
   /* ---------- Social media ----------
