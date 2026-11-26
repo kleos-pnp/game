@@ -38,6 +38,19 @@
 
   var langs = (C.languages && C.languages.length) ? C.languages : ["en"];
   var lang = pickLanguage();
+  var header = document.querySelector(".site-header");
+  var nav = document.querySelector(".nav");
+
+  function updateLayoutOffsets() {
+    document.documentElement.style.setProperty("--header-height", header.offsetHeight + "px");
+    document.documentElement.style.setProperty("--nav-height", nav.offsetHeight + "px");
+  }
+  if (typeof ResizeObserver === "function") {
+    var layoutObserver = new ResizeObserver(updateLayoutOffsets);
+    layoutObserver.observe(header);
+    layoutObserver.observe(nav);
+  }
+  window.addEventListener("resize", updateLayoutOffsets);
 
   function pickLanguage() {
     var n = String(navigator.language || "").slice(0, 2).toLowerCase();
@@ -366,6 +379,7 @@
 
     /* footer */
     $("foot-name").textContent = "© " + new Date().getFullYear() + " " + ((C.site && C.site.name) || "Kleos");
+    updateLayoutOffsets();
   }
 
   render();
